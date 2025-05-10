@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include <Windows.h>
 
 class Counter
 {
@@ -31,6 +32,8 @@ public:
 int main()
 {
     setlocale(LC_ALL, "Russian");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     std::string answer;
     std::cout << "Вы хотите указать начальное значение для счётчика? Введите да или нет: \n";
     std::cin >> answer;
@@ -71,6 +74,10 @@ int main()
             {
                 std::cout << "До свидания!" << std::endl;
                 break;
+            }
+            else 
+            {
+                std::cout << "Неизвестная команда. Повторите ввод.\n";
             }
         }
 }
